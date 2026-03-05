@@ -42,23 +42,37 @@ app.set('views', './views')
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 app.get('/', async function (request, response) {
 
-
   const params = {
     'filter[district]': 'algemeen',
-    'fields': 'cover, date, title, intro',
+    'fields': 'cover, date, title, intro, status',
   }
 
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
   const apiStoriesResponseJSON = await apiStoriesResponse.json()
 
-  console.log(apiStoriesResponseJSON);
+  // console.log(apiStoriesResponseJSON);
+  // console.log(params);
 
   response.render('index.liquid', { stories: apiStoriesResponseJSON.data })
 })
 
 app.get('/nieuwwest', async function (request, response) {
 
-  response.render('nieuwwest.liquid')
+  const params = {
+    // Sorteren op datum, van nieuw naar oud (dus met een minteken ervoor)
+    'sort': '-date',
+
+    // alleen locatie Nieuw-West tonen
+    'filter[district]': 'nieuw-west',
+
+    // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
+    'fields': 'cover, date, title, intro, status',
+  }
+
+  const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
+  const apiStoriesResponseJSON = await apiStoriesResponse.json()
+
+  response.render('nieuwwest.liquid', { stories: apiStoriesResponseJSON.data })
 })
 
 app.get('/zuidoost', async function (request, response) {

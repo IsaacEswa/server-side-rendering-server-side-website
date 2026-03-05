@@ -4,7 +4,20 @@
     <h1>Nieuw-West</h1>
     {% render 'partials/doelgroep-filter.liquid' %}
 
-    <section class="articles-container">
+    <section>
+        {% for story in stories %}
+        <article class="">
+            <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}" alt="">
+            <span class="article-date">{{ story.date }}</span>
+            <h2 class="article-title">{{ story.title }}</h2>
+            <p class="article-intro">{{ story.intro }}</p>
+            <a href="/nieuwwest/{{ story.slug }}">Lees meer</a>
+        </article>
+        {% endfor %}
+    </section>
+
+    {% comment %} Statische artikelen {% endcomment %}
+    {% comment %} <section class="articles-container">
         <article class="highlighted">
             <img class="article-cover" src="./assets/nieuwwest/dragers_in_damsko.png.webp" alt="Dragers in Damsko">
             <span class="article-date">21-01-2026</span>
@@ -44,7 +57,7 @@
                 ontwikkelen en organiseren...</p>
             <a href="/nieuwwest/wandelen-in-de-natuur">Lees meer</a>
         </article>
-    </section>
+    </section> {% endcomment %}
 
     <nav class="articles-pagination" aria-labelledby="pagination">
         <h3 id="pagination" class="visuallyhidden">Pagination</h3>
