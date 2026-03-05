@@ -5,20 +5,13 @@ import express from 'express'
 // Importeer de Liquid package (ook als dependency via npm geïnstalleerd)
 import { Liquid } from 'liquidjs';
 
-const params = {
-  'filter[district]': 'algemeen',
-  'fields': 'cover, date, title, intro',
-}
 
-
-console.log('Hieronder moet je waarschijnlijk nog wat veranderen')
+// console.log('Hieronder moet je waarschijnlijk nog wat veranderen')
 // Doe een fetch naar de data die je nodig hebt
-const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
-// Lees van de response van die fetch het JSON object in, waar we iets mee kunnen doen
-const apiStoriesResponseJSON = await apiStoriesResponse.json()
 
 
-console.log(apiStoriesResponseJSON)
+
+// console.log(apiStoriesResponseJSON)
 
 
 // const apiResponseJSON = await apiResponse.json()
@@ -49,15 +42,22 @@ app.set('views', './views')
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 app.get('/', async function (request, response) {
 
-  // Render index.liquid uit de Views map
-  // Geef hier eventueel data aan mee
 
-  response.render('index.liquid')
+  const params = {
+    'filter[district]': 'algemeen',
+    'fields': 'cover, date, title, intro',
+  }
+
+  const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
+  const apiStoriesResponseJSON = await apiStoriesResponse.json()
+
+  console.log(apiStoriesResponseJSON);
+
+  response.render('index.liquid', { stories: apiStoriesResponseJSON.data })
 })
 
 app.get('/nieuwwest', async function (request, response) {
-  // Render nieuwwest.liquid uit de Views map
-  // Geef hier eventueel data aan mee
+
   response.render('nieuwwest.liquid')
 })
 
