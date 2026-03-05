@@ -22,7 +22,7 @@ console.log('Hieronder moet je waarschijnlijk nog wat veranderen')
 const app = express()
 
 // Maak werken met data uit formulieren iets prettiger
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true }))
 
 // Gebruik de map 'public' voor statische bestanden (resources zoals CSS, JavaScript, afbeeldingen en fonts)
 // Bestanden in deze map kunnen dus door de browser gebruikt worden
@@ -30,7 +30,7 @@ app.use(express.static('public'))
 
 // Stel Liquid in als 'view engine'
 const engine = new Liquid();
-app.engine('liquid', engine.express()); 
+app.engine('liquid', engine.express());
 
 // Stel de map met Liquid templates in
 // Let op: de browser kan deze bestanden niet rechtstreeks laden (zoals voorheen met HTML bestanden)
@@ -38,10 +38,29 @@ app.set('views', './views')
 
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 app.get('/', async function (request, response) {
-   // Render index.liquid uit de Views map
-   // Geef hier eventueel data aan mee
-   response.render('index.liquid')
+  // Render index.liquid uit de Views map
+  // Geef hier eventueel data aan mee
+  response.render('index.liquid')
 })
+
+app.get('/nieuwwest', async function (request, response) {
+  // Render nieuwwest.liquid uit de Views map
+  // Geef hier eventueel data aan mee
+  response.render('nieuwwest.liquid')
+})
+
+app.get('/zuidoost', async function (request, response) {
+  // Render zuidoost.liquid uit de Views map
+  // Geef hier eventueel data aan mee
+  response.render('zuidoost.liquid')
+})
+
+app.get('/oost', async function (request, response) {
+  // Render oost.liquid uit de Views map
+  // Geef hier eventueel data aan mee
+  response.render('oost.liquid')
+})
+
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 // Hier doen we nu nog niets mee, maar je kunt er mee spelen als je wilt
