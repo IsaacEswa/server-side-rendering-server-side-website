@@ -1,1 +1,30 @@
-Succes!
+{% render 'partials/head.liquid' %}
+
+<main>
+    <h1>Nieuw-West</h1>
+    {% render 'partials/doelgroep-filter.liquid' %}
+
+    <section>
+        {% for story in stories %}
+        <article class="">
+            <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}" alt="">
+            <span class="article-date">{{ story.date }}</span>
+            <h2 class="article-title">{{ story.title }}</h2>
+            <p class="article-intro">{{ story.intro }}</p>
+            <a href="/nieuwwest/{{ story.slug }}">Lees meer</a>
+        </article>
+        {% endfor %}
+    </section>
+
+    <nav class="articles-pagination" aria-labelledby="pagination">
+        <h3 id="pagination" class="visuallyhidden">Pagination</h3>
+        <ul class="pagination-list">
+            <li><a href="#" aria-current="page">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+        </ul>
+    </nav>
+
+</main>
+
+{% render 'partials/foot.liquid' %}

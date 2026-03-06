@@ -43,7 +43,13 @@ app.set('views', './views')
 app.get('/', async function (request, response) {
 
   const params = {
+    // Sorteren op datum, van nieuw naar oud (dus met een minteken ervoor)
+    'sort': '-date',
+
+    // alleen locatie algemeen tonen
     'filter[district]': 'algemeen',
+
+    // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
     'fields': 'cover, date, title, intro, status',
   }
 
