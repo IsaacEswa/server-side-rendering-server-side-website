@@ -62,6 +62,28 @@ app.get('/', async function (request, response) {
   response.render('index.liquid', { stories: apiStoriesResponseJSON.data })
 })
 
+app.get('/algemeen', async function (request, response) {
+
+  const params = {
+    // Sorteren op datum, van nieuw naar oud (dus met een minteken ervoor)
+    'sort': '-date',
+
+    // alleen locatie algemeen tonen
+    'filter[district]': 'algemeen',
+
+    // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
+    'fields': 'cover, date, title, intro, status',
+  }
+
+  const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
+  const apiStoriesResponseJSON = await apiStoriesResponse.json()
+
+  // console.log(apiStoriesResponseJSON);
+  // console.log(params);
+
+  response.render('algemeen.liquid', { stories: apiStoriesResponseJSON.data })
+})
+
 app.get('/nieuwwest', async function (request, response) {
 
   const params = {
@@ -82,14 +104,40 @@ app.get('/nieuwwest', async function (request, response) {
 })
 
 app.get('/zuidoost', async function (request, response) {
-  // Render zuidoost.liquid uit de Views map
-  // Geef hier eventueel data aan mee
+
+  const params = {
+    // Sorteren op datum, van nieuw naar oud (dus met een minteken ervoor)
+    'sort': '-date',
+
+    // alleen locatie Zuidoost tonen
+    'filter[district]': 'zuidoost',
+
+    // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
+    'fields': 'cover, date, title, intro, status',
+  }
+
+  const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
+  const apiStoriesResponseJSON = await apiStoriesResponse.json()
+
   response.render('zuidoost.liquid')
 })
 
 app.get('/oost', async function (request, response) {
-  // Render oost.liquid uit de Views map
-  // Geef hier eventueel data aan mee
+
+  const params = {
+    // Sorteren op datum, van nieuw naar oud (dus met een minteken ervoor)
+    'sort': '-date',
+
+    // alleen locatie Oost tonen
+    'filter[district]': 'oost',
+
+    // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
+    'fields': 'cover, date, title, intro, status',
+  }
+
+  const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
+  const apiStoriesResponseJSON = await apiStoriesResponse.json()
+
   response.render('oost.liquid')
 })
 
