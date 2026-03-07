@@ -1,0 +1,16 @@
+.featured-article {
+    background-image: url("../assets/nieuwwest/dragers_in_damsko.png.webp");
+    height: 30em;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    * {
+        color: white;
+    }
+}
+
+.overlay {
+    border-image:
+        linear-gradient(to top, hsl(0 0% 0% / .9),
+            hsl(0 0% 0% / .4)) fill 1;
+}

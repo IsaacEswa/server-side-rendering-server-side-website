@@ -1,29 +1,25 @@
 {% render 'partials/head.liquid' %}
 
 <main>
-    <h1>Home</h1>
-    {% render 'partials/doelgroep-filter.liquid' %}
 
-    <section>
-        {% for story in stories %}
-        <article class="">
-            <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}" alt="">
-            <span class="article-date">{{ story.date }}</span>
-            <h2 class="article-title">{{ story.title }}</h2>
-            <p class="article-intro">{{ story.intro }}</p>
-            <a href="/nieuwwest/{{ story.slug }}">Lees meer</a>
+    <section class="main-content">
+        <article class="featured-article overlay">
+            <div class="featured-article-information">
+                <span>Laatste nieuws</span>
+                <div class="featured-article-date">
+                    <svg width="16" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512"><!--!Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                        <path
+                            d="M120 0c13.3 0 24 10.7 24 24l0 40 160 0 0-40c0-13.3 10.7-24 24-24s24 10.7 24 24l0 40 32 0c35.3 0 64 28.7 64 64l0 288c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 128C0 92.7 28.7 64 64 64l32 0 0-40c0-13.3 10.7-24 24-24zm0 112l-56 0c-8.8 0-16 7.2-16 16l0 48 352 0 0-48c0-8.8-7.2-16-16-16l-264 0zM48 224l0 192c0 8.8 7.2 16 16 16l320 0c8.8 0 16-7.2 16-16l0-192-352 0z" />
+                    </svg>
+                    <time datetime="">21-01-2026</time>
+                </div>
+            </div>
+            <h3>Buurtcampus expositie; ‘Dragers in Damsko’</h3>
         </article>
-        {% endfor %}
     </section>
 
-    <nav class="articles-pagination" aria-labelledby="pagination">
-        <h3 id="pagination" class="visuallyhidden">Pagination</h3>
-        <ul class="pagination-list">
-            <li><a href="#" aria-current="page">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-        </ul>
-    </nav>
+    <aside class="sticky-sidebar"></aside>
 
 </main>
 
