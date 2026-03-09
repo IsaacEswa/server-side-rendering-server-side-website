@@ -150,6 +150,10 @@ app.post('/', async function (request, response) {
   response.redirect(303, '/')
 })
 
+app.use((req, res, next) => {
+  res.status(404).send("mi bomboclat, deze pagina bestaat niet")
+})
+
 // Stel het poortnummer in waar Express op moet gaan luisteren
 // Lokaal is dit poort 8000, als dit ergens gehost wordt, is het waarschijnlijk poort 80
 app.set('port', process.env.PORT || 8000)

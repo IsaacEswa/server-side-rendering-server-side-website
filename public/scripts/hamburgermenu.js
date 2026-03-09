@@ -44,3 +44,6 @@ function hideSidebar() {
     sidebar.setAttribute("aria-hidden", "true");
     closeBtn.blur();
 }
+
+
+console.log('hamburger menu script loaded');
