@@ -190,3 +190,71 @@ header::after {
             hsl(0 0% 0% / .9),
             hsl(0 0% 0% / .4));
 }
+
+/* ----- DISTRICT ARTICLES STYLING ----- */
+.home-articles {
+    margin-top: 5em;
+}
+
+.district-articles {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+
+
+    article {
+        height: 22em;
+        /* background-color: var(--light-background); */
+        padding: .5em;
+
+        gap: 0.5em;
+        display: flex;
+        flex-direction: column;
+
+        img {
+            height: 60%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.district-articles.algemeen article {
+    background-color: var(--light-background);
+
+    time {
+        color: var(--dark-text);
+    }
+
+    h3 {
+        color: var(--secondary-color);
+        /* width: 90%; */
+    }
+}
+
+.district-articles.nieuwwest article {
+    background-color: var(--nieuwwest);
+
+    time {
+        color: var(--light-text);
+    }
+
+    h3 {
+        color: white;
+        /* width: 90%; */
+    }
+}
+
+
+.home-district-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1em;
+
+    a {
+        color: var(--dark-text);
+        text-decoration: none;
+    }
+}

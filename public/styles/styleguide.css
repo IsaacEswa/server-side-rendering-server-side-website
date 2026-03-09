@@ -17,12 +17,19 @@
     --oost: #34356A;
     --zuidoost: #005D66;
 
+    --dark-text: #1E1E1E;
+    --light-text: #F1F1F1;
+
+    --light-background: #F1F1F1;
+
     --paddingsidesMobile: 0 15px;
 
 }
 
 body {
     line-height: 1.5;
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    /* 16 → 18 */
 }
 
 main {
@@ -34,13 +41,19 @@ article img {
     border-radius: 20px;
 }
 
-h3 {
+h2 {
     font-size: clamp(1.5rem, 3vw, 1.75rem);
-    /* 20 → 28 */
+    /* 24 → 28 */
+    color: var(--dark-text)
+}
+
+h3 {
+    font-size: clamp(1.375rem, 3vw, 1.75rem);
+    /* 22 → 28 */
 }
 
 span {
-    font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
     /* 16 → 18 */
     font-weight: bold;
 }
