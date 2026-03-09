@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "Arial BC";
+    src: url('../fonts/BuurtCampusArial-Bold.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+:root {
+    --primary-color: #FD4D00;
+    --secondary-color: #34356A;
+    --nieuwwest: #89A43B;
+    --oost: #34356A;
+    --zuidoost: #005D66;
+}
+
+body {
+    line-height: 1.5;
+}
