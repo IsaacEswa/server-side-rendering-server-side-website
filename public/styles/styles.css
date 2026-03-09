@@ -9,6 +9,7 @@ header {
 
     .header-logo {
         display: flex;
+        line-height: 0;
 
         img {
             width: 75%;
@@ -125,23 +126,67 @@ header::after {
 
 /* ---------- MAIN SECTION STYLING ---------- */
 
-main {
+.main-content {
     margin-top: 3em;
 }
 
 .featured-article {
     background-image: url("../assets/nieuwwest/dragers_in_damsko.png.webp");
-    height: 30em;
+    height: 25em;
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    align-items: end;
+    padding: 1.5em;
+
+    /* Voor de overlay */
+    position: relative;
+    overflow: hidden;
+
+    .featured-article-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+
+    .featured-article-information {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+
+
+
+        .featured-article-date {
+            display: flex;
+            align-items: center;
+            gap: .5em;
+        }
+
+        /* oranje label */
+        span {
+            background: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+    }
+
+
 
     * {
         color: white;
+        fill: white;
     }
 }
 
-.overlay {
-    border-image:
-        linear-gradient(to top, hsl(0 0% 0% / .9),
-            hsl(0 0% 0% / .4)) fill 1;
+.featured-article::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(to top,
+            hsl(0 0% 0% / .9),
+            hsl(0 0% 0% / .4));
 }
