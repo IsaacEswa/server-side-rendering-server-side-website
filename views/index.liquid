@@ -17,8 +17,6 @@
                     </div>
                 </div>
                 <h3>Buurtcampus expositie; ‘Dragers in Damsko’</h3>
-                <a href="/{{ story.district }}/{{ story.slug }}">→</a>
-
             </div>
         </article>
 
@@ -31,11 +29,15 @@
                 {% assign counter = 0 %}
                 {% for story in stories %}
                 {% if story.district == "algemeen" %}
-                {% if counter < 3 %} <article class="single-article algemeen">
-                    <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}" alt="">
-                    <time class="article-date">{{ story.date }}</time>
-                    <h3 class="article-title">{{ story.title }}</h3>
+                {% if counter < 3 %} <a href="/{{ story.district }}/test" class="single-article-link">
+                    <article class="single-article algemeen">
+                        <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}"
+                            alt="">
+                        <time class="article-date">{{ story.date }}</time>
+                        <h3 class="article-title">{{ story.title }}</h3>
                     </article>
+                    </a>
+
                     {% assign counter = counter | plus: 1 %}
                     {% endif %}
                     {% endif %}
@@ -52,11 +54,15 @@
                 {% assign counter = 0 %}
                 {% for story in stories %}
                 {% if story.district == "nieuw-west" %}
-                {% if counter < 3 %} <article class="single-article nieuw-west">
-                    <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}" alt="">
-                    <time class="article-date">{{ story.date }}</time>
-                    <h3 class="article-title">{{ story.title }}</h3>
+                {% if counter < 3 %} <a href="/{{ story.district }}/test" class="single-article-link">
+                    <article class="single-article nieuw-west">
+                        <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}"
+                            alt="">
+                        <time class="article-date">{{ story.date }}</time>
+                        <h3 class="article-title">{{ story.title }}</h3>
                     </article>
+                    </a>
+
                     {% assign counter = counter | plus: 1 %}
                     {% endif %}
                     {% endif %}

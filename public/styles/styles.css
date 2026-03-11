@@ -209,6 +209,11 @@ header::after {
     flex-direction: column;
     gap: 1.5em;
 
+    .single-article-link {
+        display: block;
+        text-decoration: none;
+    }
+
 
     .single-article {
         height: 100%;
@@ -307,7 +312,8 @@ header::after {
         margin-bottom: 100px;
     }
 
-    .article-link {
+
+    /* .article-link {
         position: absolute;
         bottom: 1em;
         right: 1em;
@@ -321,7 +327,7 @@ header::after {
             fill: white;
 
         }
-    }
+    } */
 }
 
 .single-article.nieuw-west {
