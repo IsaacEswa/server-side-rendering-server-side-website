@@ -119,7 +119,7 @@ app.get('/zuidoost', async function (request, response) {
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
   const apiStoriesResponseJSON = await apiStoriesResponse.json()
 
-  response.render('zuidoost.liquid')
+  response.render('zuidoost.liquid', { stories: apiStoriesResponseJSON.data })
 })
 
 app.get('/oost', async function (request, response) {
@@ -138,7 +138,7 @@ app.get('/oost', async function (request, response) {
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
   const apiStoriesResponseJSON = await apiStoriesResponse.json()
 
-  response.render('oost.liquid')
+  response.render('oost.liquid', { stories: apiStoriesResponseJSON.data })
 })
 
 
