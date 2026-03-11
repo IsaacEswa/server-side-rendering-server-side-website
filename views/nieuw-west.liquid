@@ -8,17 +8,15 @@
 
     <section class="district-articles">
         {% for story in stories %}
-        <article class="single-article nieuw-west">
-            <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}" alt="">
-            <time class="article-date">{{ story.date }}</time>
-            <h3 class="article-title">{{ story.title }}</h3>
-            <p class="article-intro">{{ story.intro }}</p>
-            <a class="article-link" href="/{{ story.district }}/{{ story.slug }}">
-                <svg width="16" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"><!--!Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
-                    <path
-                        d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-                </svg></a>
+        <a href="/{{ story.district }}/test" class="single-article-link">
+            <article class="single-article nieuw-west">
+                <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}" alt="">
+                <div class="article-card-content">
+                    <time class="article-date">{{ story.date }}</time>
+                    <h3 class="article-title">{{ story.title }}</h3>
+                    <p class="article-intro">{{ story.intro }}</p>
+                </div>
+        </a>
         </article>
         {% endfor %}
     </section>
@@ -35,19 +33,3 @@
 </main>
 
 {% render 'partials/foot.liquid' %}
-
-{% comment %} {% for story in stories %}
-{% if story.district == "algemeen" %}
-<article class="single-article algemeen">
-    <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}" alt="">
-    <time class="article-date">{{ story.date }}</time>
-    <h3 class="article-title">{{ story.title }}</h3>
-    <a class="article-link" href="/{{ story.district }}/{{ story.slug }}">
-        <svg width="16" xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"><!--!Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
-            <path
-                d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-        </svg></a>
-</article>
-{% endif %}
-{% endfor %} {% endcomment %}
