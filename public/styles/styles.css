@@ -131,7 +131,7 @@ header::after {
 }
 
 .featured-article {
-    background-image: url("../assets/nieuwwest/dragers_in_damsko.png.webp");
+    background-image: url("../assets/nieuw-west/dragers_in_damsko.png.webp");
     height: 25em;
     background-size: cover;
     background-repeat: no-repeat;
@@ -232,8 +232,8 @@ header::after {
     }
 }
 
-.district-articles.nieuwwest article {
-    background-color: var(--nieuwwest);
+.district-articles.nieuw-west article {
+    background-color: var(--nieuw-west);
 
     time {
         color: var(--light-text);
@@ -256,5 +256,41 @@ header::after {
     a {
         color: var(--dark-text);
         text-decoration: none;
+    }
+}
+
+/* ----- DISTRICT PAGE STYLING ----- */
+.district-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.nieuw-west-articles article {}
+
+
+
+
+.district-articles {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+
+
+    article {
+        height: 22em;
+        /* background-color: var(--light-background); */
+        padding: .5em;
+
+        gap: 0.5em;
+        display: flex;
+        flex-direction: column;
+
+        img {
+            height: 60%;
+            width: 100%;
+            object-fit: cover;
+        }
     }
 }

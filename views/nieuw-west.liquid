@@ -1,15 +1,17 @@
 {% render 'partials/head.liquid' %}
 
 <main>
-    <h1>Nieuw-West</h1>
-    {% render 'partials/doelgroep-filter.liquid' %}
+    <section class="district-hero">
+        <h2>Nieuw-West</h2>
+        {% render 'partials/doelgroep-filter.liquid' %}
+    </section>
 
-    <section>
+    <section class="nieuwwest-articles">
         {% for story in stories %}
         <article class="">
             <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}" alt="">
             <span class="article-date">{{ story.date }}</span>
-            <h2 class="article-title">{{ story.title }}</h2>
+            <h3 class="article-title">{{ story.title }}</h3>
             <p class="article-intro">{{ story.intro }}</p>
             <a href="/nieuwwest/{{ story.slug }}">Lees meer</a>
         </article>

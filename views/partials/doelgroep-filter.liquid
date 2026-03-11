@@ -1,6 +1,6 @@
 <section>
     <div class="targetgroup-filter-container">
-        <h3>Filter doelgroep</h3>
+        {% comment %} <h3>Filter doelgroep</h3> {% endcomment %}
         <select name="targetgroups" id="targetgroup-filter">
             <option value="">Voor iedereen</option>
             <option value="bewoners">Bewoners</option>
@@ -10,9 +10,9 @@
         </select>
     </div>
 
-    <div class="article-search-container">
+    {% comment %} <div class="article-search-container">
         <form class="article-search" action="">
             <input type="search" placeholder="Zoek artikelen..." name="search">
-        </form>
+        </form> {% endcomment %}
     </div>
 </section>

@@ -84,7 +84,7 @@ app.get('/algemeen', async function (request, response) {
   response.render('algemeen.liquid', { stories: apiStoriesResponseJSON.data })
 })
 
-app.get('/nieuwwest', async function (request, response) {
+app.get('/nieuw-west', async function (request, response) {
 
   const params = {
     // Sorteren op datum, van nieuw naar oud (dus met een minteken ervoor)
@@ -100,7 +100,7 @@ app.get('/nieuwwest', async function (request, response) {
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
   const apiStoriesResponseJSON = await apiStoriesResponse.json()
 
-  response.render('nieuwwest.liquid', { stories: apiStoriesResponseJSON.data })
+  response.render('nieuw-west.liquid', { stories: apiStoriesResponseJSON.data })
 })
 
 app.get('/zuidoost', async function (request, response) {
