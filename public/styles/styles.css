@@ -225,6 +225,9 @@ header::after {
 
         .article-card-content {
             padding: 1em 1.5em;
+            gap: 0.7em;
+            display: flex;
+            flex-direction: column;
 
 
             .article-intro {
@@ -245,7 +248,7 @@ header::after {
     background-color: var(--light-background);
 
     time {
-        color: var(--dark-text);
+        color: var(--primary-color);
     }
 
     h3 {
@@ -308,14 +311,66 @@ header::after {
     }
 }
 
-.single-article.nieuw-west {
+.single-article.algemeen {
     background-color: var(--light-background);
 
     time {
-        color: var(--dark-text);
+        color: var(--primary-color);
     }
 
     h3 {
         color: var(--secondary-color);
+    }
+
+    p {
+        color: var(--dark-text);
+    }
+}
+
+.single-article.nieuw-west {
+    background-color: var(--nieuw-west);
+
+    time {
+        color: var(--light-text);
+    }
+
+    h3 {
+        color: white;
+    }
+
+    p {
+        color: var(--light-text);
+    }
+}
+
+.single-article.zuidoost {
+    background-color: var(--zuidoost);
+
+    time {
+        color: var(--light-text);
+    }
+
+    h3 {
+        color: white;
+    }
+
+    p {
+        color: var(--light-text);
+    }
+}
+
+.single-article.oost {
+    background-color: var(--oost);
+
+    time {
+        color: var(--light-text);
+    }
+
+    h3 {
+        color: var(--primary-color);
+    }
+
+    p {
+        color: var(--light-text);
     }
 }
