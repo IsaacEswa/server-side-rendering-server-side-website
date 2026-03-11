@@ -6,14 +6,20 @@
         {% render 'partials/doelgroep-filter.liquid' %}
     </section>
 
-    <section class="nieuwwest-articles">
+
+
+
+
+
+
+    <section class="district-articles">
         {% for story in stories %}
-        <article class="">
+        <article class="single-article nieuw-west">
             <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}" alt="">
             <span class="article-date">{{ story.date }}</span>
             <h3 class="article-title">{{ story.title }}</h3>
             <p class="article-intro">{{ story.intro }}</p>
-            <a href="/nieuwwest/{{ story.slug }}">Lees meer</a>
+            <a href="/{{ story.district }}/{{ story.slug }}">→</a>
         </article>
         {% endfor %}
     </section>

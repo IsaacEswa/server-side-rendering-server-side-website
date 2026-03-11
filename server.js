@@ -94,7 +94,7 @@ app.get('/nieuw-west', async function (request, response) {
     'filter[district]': 'nieuw-west',
 
     // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
-    'fields': 'cover, date, title, intro, status',
+    'fields': 'cover, date, title, intro, status, district',
   }
 
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
@@ -113,7 +113,7 @@ app.get('/zuidoost', async function (request, response) {
     'filter[district]': 'zuidoost',
 
     // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
-    'fields': 'cover, date, title, intro, status',
+    'fields': 'cover, date, title, intro, status, district',
   }
 
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
@@ -132,7 +132,7 @@ app.get('/oost', async function (request, response) {
     'filter[district]': 'oost',
 
     // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
-    'fields': 'cover, date, title, intro, status',
+    'fields': 'cover, date, title, intro, status, district',
   }
 
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
