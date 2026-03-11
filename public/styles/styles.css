@@ -278,6 +278,7 @@ header::after {
 .single-article {
     height: 100%;
     padding: .5em;
+    position: relative;
 
     gap: 0.5em;
     display: flex;
@@ -287,6 +288,27 @@ header::after {
         height: 200px;
         width: 100%;
         object-fit: cover;
+    }
+
+    .article-intro {
+        margin-bottom: 100px;
+
+    }
+
+    .article-link {
+        position: absolute;
+        bottom: 1em;
+        right: 1em;
+        background-color: var(--nieuw-west);
+        padding: 10px;
+        border-radius: 10px;
+        line-height: 0;
+
+
+        svg {
+            fill: white;
+
+        }
     }
 }
 
