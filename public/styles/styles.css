@@ -202,8 +202,8 @@ header::after {
     gap: 1.5em;
 
 
-    article {
-        height: 22em;
+    .single-article {
+        height: 100%;
         /* background-color: var(--light-background); */
         padding: .5em;
 
@@ -212,14 +212,14 @@ header::after {
         flex-direction: column;
 
         img {
-            height: 60%;
+            height: 200px;
             width: 100%;
             object-fit: cover;
         }
     }
 }
 
-.district-articles.algemeen article {
+.district-articles.algemeen .single-article {
     background-color: var(--light-background);
 
     time {
@@ -232,7 +232,7 @@ header::after {
     }
 }
 
-.district-articles.nieuw-west article {
+.district-articles.nieuw-west .single-article {
     background-color: var(--nieuw-west);
 
     time {
@@ -268,8 +268,7 @@ header::after {
 }
 
 .single-article {
-    height: 25em;
-    /* background-color: var(--light-background); */
+    height: 100%;
     padding: .5em;
 
     gap: 0.5em;
@@ -277,35 +276,20 @@ header::after {
     flex-direction: column;
 
     img {
-        height: 60%;
+        height: 200px;
         width: 100%;
         object-fit: cover;
     }
 }
 
+.single-article.nieuw-west {
+    background-color: var(--light-background);
 
+    time {
+        color: var(--dark-text);
+    }
 
-
-/*
-.district-articles {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-
-
-    article {
-        height: 22em;
-        padding: .5em;
-
-        gap: 0.5em;
-        display: flex;
-        flex-direction: column;
-
-        img {
-            height: 60%;
-            width: 100%;
-            object-fit: cover;
-        }
+    h3 {
+        color: var(--secondary-color);
     }
 }
-    */
