@@ -194,6 +194,14 @@ header::after {
 /* ----- DISTRICT ARTICLES STYLING ----- */
 .home-articles {
     margin-top: 5em;
+
+    /* .single-article {
+
+        .article-title {
+            margin-bottom: 100px;
+        }
+
+    } */
 }
 
 .district-articles {
@@ -268,11 +276,16 @@ header::after {
 }
 
 /* ----- DISTRICT PAGE STYLING ----- */
+
 .district-hero {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+
+    margin-top: 3em;
+    margin-bottom: 1.5em;
+
 }
 
 .single-article {
@@ -292,7 +305,6 @@ header::after {
 
     .article-intro {
         margin-bottom: 100px;
-
     }
 
     .article-link {

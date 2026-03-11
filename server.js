@@ -46,11 +46,11 @@ app.get('/', async function (request, response) {
     // Sorteren op datum, van nieuw naar oud (dus met een minteken ervoor)
     'sort': '-date',
 
-    // alleen locatie algemeen tonen
-    'filter[district]': 'algemeen',
+    // alle locaties tonen
+    //  'filter[district]': 'algemeen, nieuw-west, zuidoost, oost',
 
     // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
-    'fields': 'cover, date, title, intro, status',
+    'fields': 'cover, date, title, intro, status, district',
   }
 
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
@@ -72,7 +72,7 @@ app.get('/algemeen', async function (request, response) {
     'filter[district]': 'algemeen',
 
     // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
-    'fields': 'cover, date, title, intro, status',
+    'fields': 'cover, date, title, intro, status, district',
   }
 
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))

@@ -57,3 +57,21 @@ span {
     /* 16 → 18 */
     font-weight: bold;
 }
+
+/* DOELGROEP FILTER */
+.targetgroup-filter-container {
+
+    select {
+        appearance: none;
+        /* verwijdert browser styling */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        padding: 5px 10px;
+        border-radius: 10px;
+        /* font-size: 1rem; */
+        background-color: var(--nieuw-west);
+        cursor: pointer;
+        color: white;
+    }
+}
