@@ -204,17 +204,25 @@ header::after {
 
     .single-article {
         height: 100%;
-        /* background-color: var(--light-background); */
         padding: .5em;
 
         gap: 0.5em;
         display: flex;
         flex-direction: column;
 
-        img {
+        .article-cover {
             height: 200px;
             width: 100%;
             object-fit: cover;
+        }
+
+        .article-intro {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* number of lines to show */
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
     }
 }
@@ -275,7 +283,7 @@ header::after {
     display: flex;
     flex-direction: column;
 
-    img {
+    .article-cover {
         height: 200px;
         width: 100%;
         object-fit: cover;
