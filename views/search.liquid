@@ -4,26 +4,6 @@
 
     <section class="main-content">
 
-        {% assign latest = stories[0] %}
-        <a href="/{{ latest.district }}/test" class="single-article-link">
-            <article class="featured-article overlay">
-                <div class="featured-article-content">
-                    <div class="featured-article-information">
-                        <span>Laatste nieuws</span>
-                        <div class="featured-article-date">
-                            {% comment %} <svg width="16" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 448 512"><!--!Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
-                                <path
-                                    d="M120 0c13.3 0 24 10.7 24 24l0 40 160 0 0-40c0-13.3 10.7-24 24-24s24 10.7 24 24l0 40 32 0c35.3 0 64 28.7 64 64l0 288c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 128C0 92.7 28.7 64 64 64l32 0 0-40c0-13.3 10.7-24 24-24zm0 112l-56 0c-8.8 0-16 7.2-16 16l0 48 352 0 0-48c0-8.8-7.2-16-16-16l-264 0zM48 224l0 192c0 8.8 7.2 16 16 16l320 0c8.8 0 16-7.2 16-16l0-192-352 0z" />
-                            </svg> {% endcomment %}
-                            <time datetime="">{{ latest.date }}</time>
-                        </div>
-                    </div>
-                    <h3>{{ latest.title }}</h3>
-                </div>
-            </article>
-        </a>
-
         {% comment %} Algemeen {% endcomment %}
         <section class="home-articles">
             <div class="home-district-top">
@@ -31,7 +11,6 @@
                 <a href="/algemeen">Alles bekijken →</a>
             </div>
             <div class="district-articles algemeen">
-                {% assign counter = 0 %}
                 {% for story in stories %}
                 {% if story.district == "algemeen" %}
                 {% if counter < 3 %} <a href="/{{ story.district }}/test" class="single-article-link">
@@ -44,8 +23,6 @@
                         </div>
                     </article>
                     </a>
-
-                    {% assign counter = counter | plus: 1 %}
                     {% endif %}
                     {% endif %}
                     {% endfor %}
@@ -59,7 +36,6 @@
                 <a href="/nieuw-west">Alles bekijken →</a>
             </div>
             <div class="district-articles nieuw-west">
-                {% assign counter = 0 %}
                 {% for story in stories %}
                 {% if story.district == "nieuw-west" %}
                 {% if counter < 3 %} <a href="/{{ story.district }}/test" class="single-article-link">
@@ -72,8 +48,6 @@
                         </div>
                     </article>
                     </a>
-
-                    {% assign counter = counter | plus: 1 %}
                     {% endif %}
                     {% endif %}
                     {% endfor %}
@@ -87,7 +61,6 @@
                 <a href="/zuidoost">Alles bekijken →</a>
             </div>
             <div class="district-articles zuidoost">
-                {% assign counter = 0 %}
                 {% for story in stories %}
                 {% if story.district == "zuidoost" %}
                 {% if counter < 3 %} <a href="/{{ story.district }}/test" class="single-article-link">
@@ -100,8 +73,6 @@
                         </div>
                     </article>
                     </a>
-
-                    {% assign counter = counter | plus: 1 %}
                     {% endif %}
                     {% endif %}
                     {% endfor %}
@@ -115,7 +86,6 @@
                 <a href="/oost">Alles bekijken →</a>
             </div>
             <div class="district-articles oost">
-                {% assign counter = 0 %}
                 {% for story in stories %}
                 {% if story.district == "oost" %}
                 {% if counter < 3 %} <a href="/{{ story.district }}/test" class="single-article-link">
@@ -128,8 +98,6 @@
                         </div>
                     </article>
                     </a>
-
-                    {% assign counter = counter | plus: 1 %}
                     {% endif %}
                     {% endif %}
                     {% endfor %}

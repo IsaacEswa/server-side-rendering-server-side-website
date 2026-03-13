@@ -142,6 +142,27 @@ app.get('/oost', async function (request, response) {
 })
 
 
+
+
+
+app.get('/search', async function (request, response) {
+  const search = request.query.search || ''
+
+  const params = {
+    'fields': 'cover, date, title, intro, status, district',
+    ...(search && { 'filter[title][_icontains]': search })
+  }
+
+  const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
+  const apiStoriesResponseJSON = await apiStoriesResponse.json()
+  // console.log(personResponseJSON.data)
+  response.render('search.liquid', { stories: apiStoriesResponseJSON.data, search })
+})
+
+
+
+
+
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 // Hier doen we nu nog niets mee, maar je kunt er mee spelen als je wilt
 app.post('/', async function (request, response) {
