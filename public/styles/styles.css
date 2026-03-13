@@ -374,3 +374,8 @@ header::after {
         color: var(--light-text);
     }
 }
+
+/* ----- SEARCH PAGE STYLING ----- */
+.search-result {
+    text-align: center;
+}
