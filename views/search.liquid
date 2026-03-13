@@ -13,19 +13,19 @@
             <div class="district-articles algemeen">
                 {% for story in stories %}
                 {% if story.district == "algemeen" %}
-                {% if counter < 3 %} <a href="/{{ story.district }}/test" class="single-article-link">
+                <a href="/{{ story.district }}/test" class="single-article-link">
                     <article class="single-article algemeen">
                         <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}"
                             alt="">
                         <div class="article-card-content">
                             <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
                             <h3 class="article-title">{{ story.title }}</h3>
+                            {% comment %} <span>{{ story.district }}</span> {% endcomment %}
                         </div>
                     </article>
-                    </a>
-                    {% endif %}
-                    {% endif %}
-                    {% endfor %}
+                </a>
+                {% endif %}
+                {% endfor %}
             </div>
         </section>
 
@@ -38,19 +38,19 @@
             <div class="district-articles nieuw-west">
                 {% for story in stories %}
                 {% if story.district == "nieuw-west" %}
-                {% if counter < 3 %} <a href="/{{ story.district }}/test" class="single-article-link">
+                <a href="/{{ story.district }}/test" class="single-article-link">
                     <article class="single-article nieuw-west">
                         <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}"
                             alt="">
                         <div class="article-card-content">
-                            <time class="article-date">{{ story.date }}</time>
+                            <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
                             <h3 class="article-title">{{ story.title }}</h3>
+                            {% comment %} <span>{{ story.district }}</span> {% endcomment %}
                         </div>
                     </article>
-                    </a>
-                    {% endif %}
-                    {% endif %}
-                    {% endfor %}
+                </a>
+                {% endif %}
+                {% endfor %}
             </div>
         </section>
 
@@ -63,19 +63,19 @@
             <div class="district-articles zuidoost">
                 {% for story in stories %}
                 {% if story.district == "zuidoost" %}
-                {% if counter < 3 %} <a href="/{{ story.district }}/test" class="single-article-link">
+                <a href="/{{ story.district }}/test" class="single-article-link">
                     <article class="single-article zuidoost">
                         <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}"
                             alt="">
                         <div class="article-card-content">
-                            <time class="article-date">{{ story.date }}</time>
+                            <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
                             <h3 class="article-title">{{ story.title }}</h3>
+                            {% comment %} <span>{{ story.district }}</span> {% endcomment %}
                         </div>
                     </article>
-                    </a>
-                    {% endif %}
-                    {% endif %}
-                    {% endfor %}
+                </a>
+                {% endif %}
+                {% endfor %}
             </div>
         </section>
 
@@ -88,19 +88,19 @@
             <div class="district-articles oost">
                 {% for story in stories %}
                 {% if story.district == "oost" %}
-                {% if counter < 3 %} <a href="/{{ story.district }}/test" class="single-article-link">
+                <a href="/{{ story.district }}/test" class="single-article-link">
                     <article class="single-article oost">
                         <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}"
                             alt="">
                         <div class="article-card-content">
-                            <time class="article-date">{{ story.date }}</time>
+                            <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
                             <h3 class="article-title">{{ story.title }}</h3>
+                            {% comment %} <span>{{ story.district }}</span> {% endcomment %}
                         </div>
                     </article>
-                    </a>
-                    {% endif %}
-                    {% endif %}
-                    {% endfor %}
+                </a>
+                {% endif %}
+                {% endfor %}
             </div>
         </section>
 

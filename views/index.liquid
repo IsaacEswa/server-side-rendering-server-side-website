@@ -67,7 +67,7 @@
                         <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}"
                             alt="">
                         <div class="article-card-content">
-                            <time class="article-date">{{ story.date }}</time>
+                            <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
                             <h3 class="article-title">{{ story.title }}</h3>
                         </div>
                     </article>
@@ -95,7 +95,7 @@
                         <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}"
                             alt="">
                         <div class="article-card-content">
-                            <time class="article-date">{{ story.date }}</time>
+                            <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
                             <h3 class="article-title">{{ story.title }}</h3>
                         </div>
                     </article>
@@ -123,7 +123,7 @@
                         <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}"
                             alt="">
                         <div class="article-card-content">
-                            <time class="article-date">{{ story.date }}</time>
+                            <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
                             <h3 class="article-title">{{ story.title }}</h3>
                         </div>
                     </article>

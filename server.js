@@ -51,6 +51,8 @@ app.get('/', async function (request, response) {
 
     // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
     'fields': 'cover, date, title, intro, status, district',
+    'filter[status][_eq]': 'published',
+
   }
 
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
@@ -73,6 +75,7 @@ app.get('/algemeen', async function (request, response) {
 
     // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
     'fields': 'cover, date, title, intro, status, district',
+    'filter[status][_eq]': 'published',
   }
 
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
@@ -95,6 +98,7 @@ app.get('/nieuw-west', async function (request, response) {
 
     // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
     'fields': 'cover, date, title, intro, status, district',
+    'filter[status][_eq]': 'published',
   }
 
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
@@ -114,6 +118,7 @@ app.get('/zuidoost', async function (request, response) {
 
     // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
     'fields': 'cover, date, title, intro, status, district',
+    'filter[status][_eq]': 'published',
   }
 
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
@@ -133,6 +138,7 @@ app.get('/oost', async function (request, response) {
 
     // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
     'fields': 'cover, date, title, intro, status, district',
+    'filter[status][_eq]': 'published',
   }
 
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
@@ -150,13 +156,18 @@ app.get('/search', async function (request, response) {
 
   const params = {
     'fields': 'cover, date, title, intro, status, district',
-    ...(search && { 'filter[title][_icontains]': search })
+    ...(search && { 'filter[title][_icontains]': search }),
+    'filter[status][_eq]': 'published',
+    limit: -1,
   }
 
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
   const apiStoriesResponseJSON = await apiStoriesResponse.json()
   // console.log(personResponseJSON.data)
+  console.log(apiStoriesResponseJSON.data.length)
+
   response.render('search.liquid', { stories: apiStoriesResponseJSON.data, search })
+
 })
 
 
